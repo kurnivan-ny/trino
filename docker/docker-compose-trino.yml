@@ -1,0 +1,11 @@
+version: "3.4"
+services:
+  trino:
+    ports:
+      - "5050:8080"
+    image: "trinodb/trino"
+    container_name: trino
+    volumes:
+      - ./trino/etc:/usr/lib/trino/etc:ro
+      - ./trino/etc/catalog:/etc/trino/catalog
+    restart: always
